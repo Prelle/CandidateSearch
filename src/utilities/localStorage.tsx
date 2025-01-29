@@ -14,6 +14,12 @@ class localStorageService {
         candidates.push(candidate);
         localStorage.setItem('candidates', JSON.stringify(candidates));
     }
+
+    public removeCandidate(id: number): void {
+        const candidates = this.getCandidates();
+        const filtered = candidates.filter((candidate) => candidate.id !== id);
+        localStorage.setItem('candidates', JSON.stringify(filtered));
+    }
 }
 
 export default new localStorageService();
