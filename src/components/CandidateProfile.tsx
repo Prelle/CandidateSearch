@@ -4,10 +4,6 @@ interface CandidateProfileProps {
     profile: Candidate;
 }
 
-function niceName(profile: Candidate) {
-    return profile.name ? `${profile.name}<i>(${profile.login})</i>` : profile.login;
-}
-
 const CandidateProfile = (props:CandidateProfileProps) => {
     const { profile } = props;
 
@@ -17,7 +13,8 @@ const CandidateProfile = (props:CandidateProfileProps) => {
                 <div className="profileCard">
                     <img src={profile.avatar_url} alt={profile.login} />
                     <div className="profileInfo">
-                        <h2>{niceName(profile)}</h2>
+                        {profile.name && <h2>{profile.name} <i>({profile.login})</i></h2>}
+                        {!profile.name && <h2>{profile.login}</h2>}                        
                         {profile.location && <p>Location: {profile.location}</p>}
                         {profile.email && <p>Email: {profile.email}</p>}
                         {profile.company && <p>Company: {profile.company}</p>}
