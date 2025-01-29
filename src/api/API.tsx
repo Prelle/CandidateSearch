@@ -1,7 +1,6 @@
 const searchGithub = async () => {
   try {
-    const start = Math.floor(Math.random() * 100000000) + 1;
-    // console.log(import.meta.env);
+    const start = Math.floor(Math.random() * 100000000) + 1;    
     const response = await fetch(
       `https://api.github.com/users?since=${start}`,
       {
@@ -15,7 +14,7 @@ const searchGithub = async () => {
     if (!response.ok) {
       throw new Error('invalid API response, check the network tab');
     }
-    // console.log('Data:', data);
+    
     return data;
   } catch (err) {
     // console.log('an error occurred', err);
@@ -25,6 +24,7 @@ const searchGithub = async () => {
 
 const searchGithubUser = async (username: string) => {
   try {
+    console.log('searching user');
     const response = await fetch(`https://api.github.com/users/${username}`, {
       headers: {
         Authorization: `Bearer ${import.meta.env.VITE_GITHUB_TOKEN}`,
@@ -34,6 +34,7 @@ const searchGithubUser = async (username: string) => {
     if (!response.ok) {
       throw new Error('invalid API response, check the network tab');
     }
+    console.log('Data:', data);
     return data;
   } catch (err) {
     // console.log('an error occurred', err);
