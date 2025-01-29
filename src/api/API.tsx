@@ -1,4 +1,13 @@
+import testData from '../utilities/testData';
+
+const useTestData:boolean = import.meta.env.VITE_TEST_DATA == "true";
+
+
 const searchGithub = async () => {
+  if (useTestData) {
+    return testData;
+  }
+
   try {
     const start = Math.floor(Math.random() * 100000000) + 1;    
     const response = await fetch(
@@ -23,6 +32,10 @@ const searchGithub = async () => {
 };
 
 const searchGithubUser = async (username: string) => {
+  if (useTestData) {
+    return testData.find((candidate) => candidate.login === username) ?? {};
+  }
+
   try {    
     const response = await fetch(`https://api.github.com/users/${username}`, {
       headers: {

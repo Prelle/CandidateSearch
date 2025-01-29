@@ -1,33 +1,30 @@
-# React + TypeScript + Vite
+# CandidateSearch
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple website which displays a selection of GitHub profiles and allows the user to add them to a list of potential candidates.
 
-Currently, two official plugins are available:
+![Image of the application running in a web browser](media/sample.png)
 
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md), which uses [Babel](https://babeljs.io/) for Fast Refresh
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc), which uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of Contents
 
-## Expanding the ESLint configuration
+- [Installation](#installation)
+- [Usage](#usage)
+- [Testing](#testing)
+- [Questions](#questions)
 
-If you're developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Installation
 
-* Configure the top-level `parserOptions` property as follows:
+To install, you will need a GitHub API key which needs to be added to a .env file in the root folder. You will then need to run `npm ci` to install dependencies.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## Usage
 
-* Replace `plugin:@typescript-eslint/recommended` with `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`.
-* Optionally, add `plugin:@typescript-eslint/stylistic-type-checked`.
-* Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` and `plugin:react/jsx-runtime` to the `extends` list.
+After installation, start the project locally with `npm run dev`. This will run a Vite instance hosting the application. Once running, you can open a browser window pointed at the Vite path to use the application.
 
----
-© 2024 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## Testing
+
+You can run the application using test data (as shown above) by setting the value of `VITE_TEST_DATA` to `true` in your `.env` file.
+
+## Questions
+
+I can be reached with questions at https://www.github.com/Prelle or via email at p.elayne.terry@gmail.com.
+
+#### This README.md file was generated with the ReadmeGenerator located at https://www.github.com/Prelle/ReadmeGenerator.
